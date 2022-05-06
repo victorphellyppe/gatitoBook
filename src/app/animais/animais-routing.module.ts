@@ -4,9 +4,9 @@ import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: '',
-    component: ListaAnimaisComponent
-  }
+    path: 'listaanimais',
+    component: ListaAnimaisComponent,
+  },
 ];
 
 @NgModule({

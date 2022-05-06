@@ -1,3 +1,5 @@
+import { ListaAnimaisComponent } from './../animais/lista-animais/lista-animais.component';
+import { NovoUsuarioComponent } from './novo-usuario/novo-usuario.component';
 import { LoginComponent } from './login/login.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
@@ -11,7 +13,12 @@ const routes: Routes = [
       {
         path: '',
         component: LoginComponent,
-      }
+      },
+      {
+        path: 'novousuario',
+        component: NovoUsuarioComponent
+      },
+
     ]
 
   },
