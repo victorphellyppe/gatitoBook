@@ -44,8 +44,8 @@
       formControlName="userName"
     />
     <app-mensagem
-      mensagem="Usuario não existe"
-      *ngIf="novoUsuarioForm.get('userName')?.touched"
+      mensagem="Usuario deve ser com letra minuscula!"
+      *ngIf="novoUsuarioForm.get('userName')?.errors?.minusculo && novoUsuarioForm.get('userName')?.touched"
     >
     </app-mensagem>
   </div>
