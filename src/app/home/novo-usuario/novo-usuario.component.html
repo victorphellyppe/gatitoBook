@@ -65,12 +65,8 @@
       formControlName="password"
     />
     <app-mensagem
-      mensagem="Senha muito pequena! senha tem que ter pelo menos 8 caracteres"
-      *ngIf="
-        novoUsuarioForm.get('password')?.touched &&
-        novoUsuarioForm.get('password')?.errors?.minLenght(8)
-      "
-    >
+    *ngIf="novoUsuarioForm.errors?.senhaIgualUsuario"
+    mensagem="Senha deve ser diferente do usuário">
     </app-mensagem>
   </div>
 
