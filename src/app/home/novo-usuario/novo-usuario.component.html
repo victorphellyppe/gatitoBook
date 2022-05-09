@@ -2,6 +2,23 @@
 <form class="form mt-4" [formGroup]="novoUsuarioForm" (submit)="cadastrar()">
   <div class="form-group">
     <input placeholder="e-mail" class="form-control" formControlName="email" />
+
+    <app-mensagem
+      mensagem="Email Obrigatório!"
+      *ngIf="
+        novoUsuarioForm.get('email')?.errors?.required &&
+        novoUsuarioForm.get('email')?.touched
+      "
+    >
+    </app-mensagem>
+    <app-mensagem
+      mensagem="E-mail no formato incorreto!"
+      *ngIf="
+        novoUsuarioForm.get('email')?.errors?.email &&
+        novoUsuarioForm.get('email')?.touched
+      "
+    >
+    </app-mensagem>
   </div>
   <div class="form-group">
     <input
@@ -10,6 +27,14 @@
       class="form-control"
       formControlName="fullName"
     />
+    <app-mensagem
+      *ngIf="
+        novoUsuarioForm.get('fullName')?.errors &&
+        novoUsuarioForm.get('fullName')?.touched
+      "
+      messagem="Nome incorreto!"
+    >
+    </app-mensagem>
   </div>
   <div class="form-group">
     <input
@@ -18,6 +43,11 @@
       class="form-control"
       formControlName="userName"
     />
+    <app-mensagem
+      mensagem="Usuario não existe"
+      *ngIf="novoUsuarioForm.get('userName')?.touched"
+    >
+    </app-mensagem>
   </div>
   <div class="form-group">
     <input
@@ -26,6 +56,14 @@
       class="form-control"
       formControlName="password"
     />
+    <app-mensagem
+      mensagem="Senha muito pequena! senha tem que ter pelo menos 8 caracteres"
+      *ngIf="
+        novoUsuarioForm.get('password')?.touched &&
+        novoUsuarioForm.get('password')?.errors?.minLenght(8)
+      "
+    >
+    </app-mensagem>
   </div>
 
   <button class="btn btn-primary btn-block">Cadastro</button>
