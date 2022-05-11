@@ -1,16 +1,16 @@
-import { ListaAnimaisComponent } from './lista-animais/lista-animais.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { ListaAnimaisComponent } from './lista-animais/lista-animais.component';
 
 const routes: Routes = [
   {
-    path: 'listaanimais',
+    path: '',
     component: ListaAnimaisComponent,
   },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AnimaisRoutingModule { }
+export class AnimaisRoutingModule {}

@@ -1,9 +1,8 @@
-import { ListaAnimaisComponent } from './../animais/lista-animais/lista-animais.component';
-import { NovoUsuarioComponent } from './novo-usuario/novo-usuario.component';
-import { LoginComponent } from './login/login.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home.component';
+import { LoginComponent } from './login/login.component';
+import { NovoUsuarioComponent } from './novo-usuario/novo-usuario.component';
 
 const routes: Routes = [
   {
@@ -16,16 +15,14 @@ const routes: Routes = [
       },
       {
         path: 'novousuario',
-        component: NovoUsuarioComponent
+        component: NovoUsuarioComponent,
       },
-
-    ]
-
+    ],
   },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class HomeRoutingModule { }
+export class HomeRoutingModule {}

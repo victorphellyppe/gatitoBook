@@ -9,7 +9,7 @@ import { ListaAnimaisComponent } from './lista-animais/lista-animais.component';
   declarations: [ListaAnimaisComponent],
   imports: [
     CommonModule,
-  ],
-  exports: [ListaAnimaisComponent]
+    AnimaisRoutingModule
+  ]
 })
 export class AnimaisModule { }

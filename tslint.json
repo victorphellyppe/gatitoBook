@@ -1,5 +1,5 @@
 {
-  "extends": ["tslint:recommended", "tslint-plugin-prettier", "tslint-config-prettier"],
+  "extends": "tslint:recommended",
   "rulesDirectory": [
     "codelyzer"
   ],
@@ -43,7 +43,6 @@
         ]
       }
     ],
-    "no-any": true,
     "no-console": [
       true,
       "debug",

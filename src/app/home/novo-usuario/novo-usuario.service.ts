@@ -1,19 +1,18 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { NovoUsuario } from './novo-usuario.ts';
+import { NovoUsuario } from './novo-usuario';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class NovoUsuarioService {
+  constructor(private http: HttpClient) {}
 
-  constructor(private httpClient: HttpClient) { }
-
-  cadastraNovoUsuario(novoUsuario: NovoUsuario){
-    return this.httpClient.post('http://localhost:3000/user/signup', novoUsuario);
+  cadastraNovoUsuario(novoUsuario: NovoUsuario) {
+    return this.http.post('http://localhost:3000/user/signup', novoUsuario);
   }
 
   verificaUsuarioExistente(nomeUsuario: string){
-    return this.httpClient.get(`http://localhost:3000/user/exists/${nomeUsuario}`, )
+    return this.http.get(`http://localhost:3000/user/exists/${nomeUsuario}`);
   }
 }

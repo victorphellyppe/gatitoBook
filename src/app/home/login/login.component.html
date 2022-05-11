@@ -1,4 +1,5 @@
 <h4 class="text-center">Login</h4>
+
 <form class="form mt-4" (ngSubmit)="login()" #loginForm="ngForm">
   <div class="form-group">
     <input
@@ -10,8 +11,8 @@
       required
     />
     <app-mensagem
-      mensagem="Usuario obrigatório!"
       *ngIf="campoUsuario.invalid && campoUsuario.touched"
+      mensagem="Usuário obrigatório"
     ></app-mensagem>
   </div>
 
@@ -26,8 +27,8 @@
       required
     />
     <app-mensagem
-      mensagem="Senha obrigatória"
       *ngIf="campoSenha.invalid && campoSenha.touched"
+      mensagem="Senha obrigatória"
     ></app-mensagem>
   </div>
 
@@ -40,4 +41,4 @@
   </button>
 </form>
 
-<p>Não tem usuário? <a [routerLink]="['novousuario']">Cadastre - se</a></p>
+<p>Não é um usuário?<a [routerLink]="['novousuario']">Se cadastre!</a></p>
